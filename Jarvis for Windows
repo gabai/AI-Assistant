@@ -2,13 +2,14 @@ import os
 import time
 import pyaudio
 import speech_recognition as sr
-import playsound
+import playsound # pip install playsound==1.2.2
 from gtts import gTTS
 import openai
 import uuid
 
 api_key = "CHANGE THIS"
 lang = 'en'
+
 
 openai.api_key = api_key
 
@@ -36,7 +37,7 @@ while True:
                     speech = gTTS(text=text, lang=lang, slow=False, tld="com.au")
                     file_name = f"welcome_{str(uuid.uuid4())}.mp3"
                     speech.save(file_name)
-                    playsound.playsound(file_name, block=False)
+                    playsound.playsound(os.path.join(r"CHANGE THIS", file_name, block=True)
 
             except Exception as e:
                 print(f"Exception: {str(e)}")
