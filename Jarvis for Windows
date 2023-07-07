@@ -37,7 +37,7 @@ while True:
                     speech = gTTS(text=text, lang=lang, slow=False, tld="com.au")
                     file_name = f"welcome_{str(uuid.uuid4())}.mp3"
                     speech.save(file_name)
-                    playsound.playsound(os.path.join(r"CHANGE THIS", file_name, block=True)
+                    playsound.playsound(os.path.join(r"CHANGE THIS", file_name), block=True)
 
             except Exception as e:
                 print(f"Exception: {str(e)}")
